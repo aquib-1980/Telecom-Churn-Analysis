@@ -2,11 +2,15 @@
 
 **End-to-end machine learning project** to predict which telecom customers are likely to churn, enabling proactive retention strategies that protect revenue.
 
+---
+
 ## 🎯 Business Problem
 
 Customer churn is one of the most costly problems in the telecom industry. Acquiring a new customer costs 5–7x more than retaining an existing one. This project identifies high-risk customers **before** they leave, giving the business a window to intervene with targeted offers or outreach.
 
 **Key business question:** *Which customers are most likely to cancel their subscription, and what factors drive that decision?*
+
+---
 
 ## 📊 Dataset
 
@@ -22,7 +26,8 @@ Customer churn is one of the most costly problems in the telecom industry. Acqui
 - Account info: Tenure, Contract Type, Payment Method, Paperless Billing
 - Services: Phone, Internet, Streaming, Online Security, Tech Support
 - Financials: Monthly Charges, Total Charges
-- 
+
+---
 
 ## 🔧 Tech Stack
 
@@ -39,6 +44,7 @@ Customer churn is one of the most costly problems in the telecom industry. Acqui
 
 ## 🔁 Project Workflow
 
+```
 Raw Data (CSV)
       ↓
 Data Cleaning & EDA
@@ -52,7 +58,9 @@ Model Training (Random Forest + SVM)
 Evaluation — AUC · F1 · Confusion Matrix · ROC Curve
       ↓
 Model Export (Pickle)
+```
 
+---
 
 ## 🧹 Data Preprocessing
 
@@ -87,23 +95,25 @@ The dataset had a significant imbalance: 5,174 non-churners vs. 1,869 churners. 
 - After SMOTE: 4,138 non-churners vs. 4,138 churners in training data
 - Ensures the model learns genuine churn patterns rather than majority-class bias
 
+---
 
 ## 🤖 Model Results
 
 | Model | Accuracy |
-
+|---|---|
 | Support Vector Machine (SVM) | 76.3% |
 | **Random Forest (Best)** | **77.7%** |
 
 **Random Forest selected** as the final model based on higher accuracy, built-in feature importance, and better interpretability for business stakeholders.
 
+---
 
 ## 📊 Evaluation Metrics (Random Forest)
 
 > **Accuracy alone is misleading on imbalanced datasets. AUC and Recall on the minority class are the primary evaluation metrics here.**
 
 | Metric | No Churn | Churn |
-
+|---|---|---|
 | Precision | 0.86 | 0.57 |
 | Recall | 0.83 | **0.64** |
 | F1-Score | 0.85 | 0.60 |
@@ -113,6 +123,8 @@ The dataset had a significant imbalance: 5,174 non-churners vs. 1,869 churners. 
 - **AUC of 0.837** — the model correctly ranks a churner above a non-churner 84% of the time. Strong signal for prioritizing outreach lists.
 - **Churn Recall of 64%** — the model catches 64% of actual churners. In retention strategy, missing a churner (false negative) costs more than a false alarm, so Recall on the churn class is the metric that matters most.
 - **No Churn Precision of 0.86** — 86% of customers predicted to stay actually stay. Reliable for stable customer segmentation.
+
+---
 
 ## 🔑 Top Churn Drivers (Feature Importance)
 
@@ -124,6 +136,7 @@ Based on Random Forest feature importance scores:
 4. **Contract: Month-to-month** — strongest contract-type churn signal
 5. **Internet Service: Fiber optic** — premium service tier with highest churn rate
 
+---
 
 ## 💡 Business Recommendations
 
@@ -134,9 +147,11 @@ Based on model findings, a retention team could:
 3. **Prioritize electronic check payers** for loyalty offers — highest churn rate by payment method
 4. **Use the model's churn probability scores** to rank customers by risk and allocate retention budget efficiently — focus on the top 20% highest-risk customers first
 
+---
 
 ## 📁 Project Structure
 
+```
 telecom-churn-prediction/
 │
 ├── data/
@@ -145,9 +160,13 @@ telecom-churn-prediction/
 ├── telecom_churn_analysis.ipynb    # Main notebook — EDA, modeling, evaluation
 ├── random_forest_model.pkl          # Saved trained model
 └── README.md
+```
+
+---
 
 ## 🚀 How to Run
 
+```bash
 # Clone the repository
 git clone https://github.com/yourusername/telecom-churn-prediction.git
 cd telecom-churn-prediction
@@ -157,6 +176,9 @@ pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn
 
 # Run the notebook
 jupyter notebook telecom_churn_analysis.ipynb
+```
+
+---
 
 ## 📌 Future Improvements
 
@@ -166,7 +188,10 @@ jupyter notebook telecom_churn_analysis.ipynb
 - [ ] Threshold tuning — lower the classification threshold to improve Churn Recall further
 - [ ] SHAP values for individual customer-level explainability
 
+---
+
 ## 👤 Author
 
 **Aquib Mansuri**
 Data Analyst | Python · SQL · Power BI · Machine Learning
+[LinkedIn](https://linkedin.com/in/yourprofile) | [GitHub](https://github.com/yourusername)
