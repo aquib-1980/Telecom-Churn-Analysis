@@ -194,4 +194,4 @@ jupyter notebook telecom_churn_analysis.ipynb
 
 **Aquib Mansuri**
 Data Analyst | Python · SQL · Power BI · Machine Learning
-[LinkedIn](https://linkedin.com/in/yourprofile) | [GitHub](https://github.com/yourusername)
+
